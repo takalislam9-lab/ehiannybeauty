@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -71,13 +71,8 @@
   .service-card p{font-size:.88rem;color:#8a7b73;line-height:1.6;font-weight:300;}
 
   .gallery{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:26px;}
-  .gallery figure{border-radius:18px;overflow:hidden;box-shadow:0 20px 50px -25px rgba(58,47,43,.35);position:relative;}
+  .gallery figure{border-radius:18px;overflow:hidden;box-shadow:0 20px 50px -25px rgba(58,47,43,.35);position:relative;margin:0;}
   .gallery img{width:100%;height:420px;object-fit:cover;display:block;}
-  .gallery .illustration{
-    height:420px;background:linear-gradient(160deg,var(--mint),#6f8f81);
-    display:flex;align-items:center;justify-content:center;
-  }
-  .gallery .illustration svg{width:38%;height:38%;}
   .gallery figcaption{position:absolute;bottom:0;left:0;right:0;padding:22px;background:linear-gradient(0deg,rgba(0,0,0,.55),transparent);color:#fff;font-size:.92rem;font-weight:500;}
 
   .reviews{background:var(--ink);color:#fff;text-align:center;}
@@ -88,7 +83,14 @@
   .review-card p{font-weight:300;line-height:1.7;font-style:italic;color:#e8e0dc;font-size:.94rem;margin-bottom:14px;}
   .review-card cite{font-size:.8rem;color:#b3a89f;font-style:normal;text-transform:uppercase;letter-spacing:.5px;}
 
-  .cta{background:linear-gradient(135deg,var(--coral-dark),var(--coral));color:#fff;text-align:center;border-radius:26px;max-width:1000px;margin:0 auto;padding:70px 40px;}
+  .contact-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  .contact-info h2{font-size:clamp(1.8rem,4vw,2.4rem);margin-bottom:20px;}
+  .contact-line{display:flex;align-items:center;gap:12px;margin-bottom:16px;color:#5c4d46;font-size:.98rem;}
+  .contact-line svg{flex-shrink:0;color:var(--coral-dark);}
+  .contact-map{border-radius:18px;overflow:hidden;box-shadow:0 20px 50px -25px rgba(58,47,43,.35);height:340px;}
+  .contact-map iframe{width:100%;height:100%;border:0;display:block;}
+
+  .cta{background:linear-gradient(135deg,var(--coral-dark),var(--coral));color:#fff;text-align:center;border-radius:26px;max-width:1000px;margin:70px auto 0;padding:70px 40px;}
   .cta h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:16px;}
   .cta p{opacity:.92;margin-bottom:32px;font-weight:300;}
   .cta .btn{background:#fff;color:var(--coral-dark);}
@@ -108,6 +110,8 @@
     .hero-text p{margin:0 auto 34px;}
     .hero-img img{height:380px;}
     .gallery{grid-template-columns:1fr;}
+    .contact-wrap{grid-template-columns:1fr;}
+    .contact-line{justify-content:center;}
     nav{position:fixed;top:0;right:0;height:100vh;width:78%;max-width:300px;background:var(--cream);
       flex-direction:column;padding:100px 40px;transform:translateX(100%);transition:transform .4s;box-shadow:-10px 0 40px rgba(0,0,0,.1);}
     nav.open{transform:translateX(0);}
@@ -125,25 +129,25 @@
     <ul>
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#galeria">GalerÃ­a</a></li>
+      <li><a href="#galeria">Galería</a></li>
       <li><a href="#opiniones">Opiniones</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
   </nav>
-  <button class="nav-toggle" id="navToggle">â˜°</button>
+  <button class="nav-toggle" id="navToggle">☰</button>
 </header>
 
 <section class="hero" id="inicio">
   <div class="hero-grid">
     <div class="hero-text">
-      <span class="eyebrow">Hortaleza Â· Madrid</span>
-      <div class="rating-pill">â˜…â˜…â˜…â˜…â˜… 5,0 Â· 35 reseÃ±as en Google</div>
-      <h1>Belleza con dedicaciÃ³n y cariÃ±o</h1>
+      <span class="eyebrow">Hortaleza · Madrid</span>
+      <div class="rating-pill">★★★★★ 5,0 · 35 reseñas en Google</div>
+      <h1>Belleza con dedicación y cariño</h1>
       <p>En Thianny Beauty cuidamos cada detalle: manicura, pedicura, tratamientos faciales y maderoterapia en un espacio pensado para desconectar.</p>
-      <a href="https://wa.me/34614070874?text=Hola%2C%20quiero%20reservar%20una%20cita%20en%20Thianny%20Beauty" class="btn" target="_blank" rel="noopener">Reservar por WhatsApp â†’</a>
+      <a href="https://wa.me/34614070874?text=Hola%2C%20quiero%20reservar%20una%20cita%20en%20Thianny%20Beauty" class="btn" target="_blank" rel="noopener">Reservar por WhatsApp →</a>
     </div>
     <div class="hero-img">
-      <img src="Thianny1.jpg" alt="Manicura realizada en Thianny Beauty">
+      <img src="ehianny1.jpg" alt="Manicura realizada en Thianny Beauty">
     </div>
   </div>
 </section>
@@ -157,22 +161,22 @@
     <div class="service-card">
       <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
       <h3>Manicura y pedicura</h3>
-      <p>Semipermanente y diseÃ±os personalizados, siempre impecables.</p>
+      <p>Semipermanente y diseños personalizados, siempre impecables.</p>
     </div>
     <div class="service-card">
       <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M9 12a3 3 0 1 0 6 0 3 3 0 0 0-6 0z"/></svg></div>
       <h3>Tratamientos faciales</h3>
-      <p>Limpiezas e hidrataciÃ³n adaptadas a cada tipo de piel.</p>
+      <p>Limpiezas e hidratación adaptadas a cada tipo de piel.</p>
     </div>
     <div class="service-card">
       <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 12h16M4 6h16M4 18h16"/></svg></div>
       <h3>Maderoterapia corporal</h3>
-      <p>Ritual holÃ­stico para tonificar y definir la silueta.</p>
+      <p>Ritual holístico para tonificar y definir la silueta.</p>
     </div>
     <div class="service-card">
       <div class="service-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      <h3>PestaÃ±as y cejas</h3>
-      <p>Lifting, extensiones y diseÃ±o para una mirada intensa.</p>
+      <h3>Pestañas y cejas</h3>
+      <p>Lifting, extensiones y diseño para una mirada intensa.</p>
     </div>
   </div>
 </section>
@@ -184,13 +188,11 @@
   </div>
   <div class="gallery">
     <figure>
-      <img src="Thianny1.jpg" alt="Manicura semipermanente Thianny Beauty">
+      <img src="ehianny1.jpg" alt="Manicura semipermanente Thianny Beauty">
       <figcaption>Manicura semipermanente</figcaption>
     </figure>
     <figure>
-      <div class="illustration">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.1"><path d="M12 2c4 4 7 8 7 12a7 7 0 0 1-14 0c0-4 3-8 7-12z"/><path d="M12 8v13"/></svg>
-      </div>
+      <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=900&q=80" alt="Espacio de tratamientos de belleza">
       <figcaption>Un espacio pensado para ti</figcaption>
     </figure>
   </div>
@@ -203,33 +205,50 @@
   </div>
   <div class="review-grid">
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
-      <p>"Nueva tienda en el barrio y sÃºper bien. Me hice la manicura y pedicura semipermanente y me dejaron las uÃ±as elegantes y preciosas. Muy buen servicio y sÃºper majos."</p>
-      <cite>Alba Ãlvarez Escorial</cite>
+      <div class="stars">★★★★★</div>
+      <p>"Nueva tienda en el barrio y súper bien. Me hice la manicura y pedicura semipermanente y me dejaron las uñas elegantes y preciosas. Muy buen servicio y súper majos."</p>
+      <cite>Alba Álvarez Escorial</cite>
     </div>
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
-      <p>"Tiani es fantÃ¡stica. Hace un trabajo perfecto, meticuloso. Mis uÃ±as nunca han estado tan bonitas y cuidadas. Llevo ya unos dos aÃ±os confiando en ella y nunca me decepciona."</p>
+      <div class="stars">★★★★★</div>
+      <p>"Tiani es fantástica. Hace un trabajo perfecto, meticuloso. Mis uñas nunca han estado tan bonitas y cuidadas. Llevo ya unos dos años confiando en ella y nunca me decepciona."</p>
       <cite>Elisa</cite>
     </div>
     <div class="review-card">
-      <div class="stars">â˜…â˜…â˜…â˜…â˜…</div>
-      <p>"AtenciÃ³n genial. El sitio tiene un ambiente tranquilo y muy profesional. Se toma su tiempo y es muy paciente. Hasta te ofrece un cafÃ©. VolverÃ©."</p>
+      <div class="stars">★★★★★</div>
+      <p>"Atención genial. El sitio tiene un ambiente tranquilo y muy profesional. Se toma su tiempo y es muy paciente. Hasta te ofrece un café. Volveré."</p>
       <cite>Fede Mutti</cite>
     </div>
   </div>
 </section>
 
 <section id="contacto">
+  <div class="contact-wrap">
+    <div class="contact-info">
+      <h2>Reserva tu cita</h2>
+      <div class="contact-line">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        C. de López de Hoyos, 403, Hortaleza, 28043 Madrid
+      </div>
+      <div class="contact-line">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        614 07 08 74
+      </div>
+      <a href="https://wa.me/34614070874?text=Hola%2C%20quiero%20reservar%20una%20cita%20en%20Thianny%20Beauty" class="btn" target="_blank" rel="noopener" style="margin-top:14px;">Escribir por WhatsApp</a>
+    </div>
+    <div class="contact-map">
+      <iframe src="https://www.google.com/maps?q=Thianny+Beauty+C.+de+L%C3%B3pez+de+Hoyos+403+Madrid&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
   <div class="cta">
-    <h2>Reserva tu cita</h2>
-    <p>EscrÃ­benos por WhatsApp y te confirmamos el mejor horario para ti.</p>
+    <h2>¿Hablamos?</h2>
+    <p>Escríbenos por WhatsApp y te confirmamos el mejor horario para ti.</p>
     <a href="https://wa.me/34614070874?text=Hola%2C%20quiero%20reservar%20una%20cita%20en%20Thianny%20Beauty" class="btn" target="_blank" rel="noopener">Escribir por WhatsApp</a>
   </div>
 </section>
 
 <footer>
-  Â© 2026 <span>Thianny Beauty</span> â€” Hortaleza, Madrid
+  © 2026 <span>Thianny Beauty</span> — Hortaleza, Madrid
 </footer>
 
 <a class="wa-fab" href="https://wa.me/34614070874?text=Hola%2C%20quiero%20reservar%20una%20cita%20en%20Thianny%20Beauty" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
